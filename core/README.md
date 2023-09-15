@@ -8,6 +8,7 @@
 
 ### Use Case
 
+
 ### Requirements (TODOs)
 - [ ] Templates
   - [ ] Usage of HTMX
