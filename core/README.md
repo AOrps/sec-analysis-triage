@@ -1,20 +1,50 @@
 # Core
+- 
 
+## Development (Core)
 
-## Development
+### Objective
+- Clone to the OG omega-triage-portal
 
-### TODOs
+### Use Case
+
+### Requirements (TODOs)
 - [ ] Templates
-	- [ ] [PURECSS Frontend Framework](https://purecss.io/)
+  - [ ] Usage of HTMX
+  - [ ] [PURECSS Frontend Framework](https://purecss.io/)
 - [ ] GraphQL API
-- [ ] Dockerize
-- [ ] Kubernetes
-- [ ] Redis
-- [ ] Research good db for SARIFs
+- [ ] Dockerize Core
 - [ ] Routing
 
+### Security Requirements
+- Black-Hat GraphQL
 
-### Setting up `gopls` with Emacs LSP (Eglot)
+---
+
+## Development (Infra)
+
+### Objective
+- To setup a kubernetes deployment that hosts the core and all it's external components for consumption
+
+### Use Case
+- TBD
+
+### Diagram
+- TBD
+
+### Requirements (TODOs) 
+- [ ] Kubernetes Deployments and Services
+- [ ] Research good db for SARIFs
+- [ ] Redis for Caching
+
+### Security Requirements
+- Double-check Configs for no gap
+- Flesh this out more
+
+--- 
+
+### Notes
+#### **Setting up `gopls` with Emacs LSP (Eglot)**
 
 1. Install latest stable version of `gopls`
    - `go install golang.org/x/tools/gopls@latest`
