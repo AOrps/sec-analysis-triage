@@ -5,6 +5,7 @@
 
 ### TODOs
 - [ ] Templates
+	- [ ] [PURECSS Frontend Framework](https://purecss.io/)
 - [ ] GraphQL API
 - [ ] Dockerize
 - [ ] Kubernetes
