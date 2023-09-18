@@ -12,42 +12,101 @@ const (
 	PORT = 9001
 )
 
+
+type NavLink struct {
+	Name string
+	Link string
+}
+
+type Page struct {
+	Nav []NavLink
+}
+
+func Navbar() []NavLink {
+	return []NavLink{
+		{
+			Name: "Home",
+			Link: "/",
+		},
+		{
+			Name: "Finding",
+			Link: "/finding",
+		},
+		{
+			Name: "Filters",
+			Link: "/filters",
+		},
+		{
+			Name: "Cases",
+			Link: "/cases",
+		},
+		{
+			Name: "Tool Defects",
+			Link: "/tool_defects",
+		},
+		{
+			Name: "Wiki",
+			Link: "/wiki",
+		},
+	}
+}
+
+
 func rootHandle(w http.ResponseWriter, r *http.Request) {
 	tpl := template.Must(template.ParseGlob("templates/*.html"))
-	tpl.ExecuteTemplate(w, "start",nil)
 
-	tpl.ExecuteTemplate(w, "end",nil)	
+	page := Page{
+		Nav: Navbar(),
+	}
+	
+	tpl.ExecuteTemplate(w, "main",page)	
 
 }
 
 func findingsHandle(w http.ResponseWriter, r *http.Request) {
 	tpl := template.Must(template.ParseGlob("templates/*.html"))
-	tpl.ExecuteTemplate(w, "main",nil)
-	fmt.Fprintf(w,"findings")
+
+	page := Page{
+		Nav: Navbar(),
+	}
+	
+	tpl.ExecuteTemplate(w, "main",page)	
 }
 
 func filtersHandle(w http.ResponseWriter, r *http.Request) {
 	tpl := template.Must(template.ParseGlob("templates/*.html"))
-	tpl.ExecuteTemplate(w, "main",nil)
-	fmt.Fprintf(w,"filters")
+	page := Page{
+		Nav: Navbar(),
+	}
+	
+	tpl.ExecuteTemplate(w, "main",page)	
 }
 
 func casesHandle(w http.ResponseWriter, r *http.Request) {
 	tpl := template.Must(template.ParseGlob("templates/*.html"))
-	tpl.ExecuteTemplate(w, "main",nil)
-	fmt.Fprintf(w,"cases")
+	page := Page{
+		Nav: Navbar(),
+	}
+	
+	tpl.ExecuteTemplate(w, "main",page)	
 }
 
 func toolDefectsHandle(w http.ResponseWriter, r *http.Request) {
 	tpl := template.Must(template.ParseGlob("templates/*.html"))
-	tpl.ExecuteTemplate(w, "main",nil)
-	fmt.Fprintf(w,"tool-defects")
+	page := Page{
+		Nav: Navbar(),
+	}
+	
+	tpl.ExecuteTemplate(w, "main",page)	
 }
 
 func wikiHandle(w http.ResponseWriter, r *http.Request) {
 	tpl := template.Must(template.ParseGlob("templates/*.html"))
-	tpl.ExecuteTemplate(w, "main",nil)
-	fmt.Fprintf(w,"wiki")
+	page := Page{
+		Nav: Navbar(),
+	}
+	
+	tpl.ExecuteTemplate(w, "main",page)	
 }
 
 
