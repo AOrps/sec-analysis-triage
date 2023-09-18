@@ -109,19 +109,30 @@ func wikiHandle(w http.ResponseWriter, r *http.Request) {
 	tpl.ExecuteTemplate(w, "main",page)	
 }
 
+func graphqlHandle(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf("put graphql api here")
+}
 
 func main() {
 	port := strconv.Itoa(PORT)
 
 	mux := http.NewServeMux()
+
+	// add files in ./assets
+	fs := http.FileServer(http.Dir("assets"))
+
+	// route files in ./assets to /assets/ in the html
+	mux.Handle("/assets/",http.StripPrefix("/assets/",fs))
+
+	// URL Route 
 	mux.HandleFunc("/",rootHandle)
 	mux.HandleFunc("/findings",findingsHandle)
 	mux.HandleFunc("/filters",filtersHandle)
 	mux.HandleFunc("/cases",casesHandle)
 	mux.HandleFunc("/tool-defects",toolDefectsHandle)
 	mux.HandleFunc("/wiki",wikiHandle)
+	mux.HandleFunc("/graphql",graphqlHandle)
 	
-
 	fmt.Println("server at http://localhost:"+port)
 	if http.ListenAndServe(":"+port,mux) != nil {
 		log.Fatal("could not listen and serve")
