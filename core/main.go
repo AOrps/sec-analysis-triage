@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strconv"
 	"log"
+	"text/template"
 )
 
 const (
@@ -12,26 +13,40 @@ const (
 )
 
 func rootHandle(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "yo")
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "start",nil)
+
+	tpl.ExecuteTemplate(w, "end",nil)	
+
 }
 
 func findingsHandle(w http.ResponseWriter, r *http.Request) {
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "main",nil)
 	fmt.Fprintf(w,"findings")
 }
 
 func filtersHandle(w http.ResponseWriter, r *http.Request) {
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "main",nil)
 	fmt.Fprintf(w,"filters")
 }
 
 func casesHandle(w http.ResponseWriter, r *http.Request) {
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "main",nil)
 	fmt.Fprintf(w,"cases")
 }
 
 func toolDefectsHandle(w http.ResponseWriter, r *http.Request) {
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "main",nil)
 	fmt.Fprintf(w,"tool-defects")
 }
 
 func wikiHandle(w http.ResponseWriter, r *http.Request) {
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "main",nil)
 	fmt.Fprintf(w,"wiki")
 }
 
