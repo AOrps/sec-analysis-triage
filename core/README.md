@@ -5,12 +5,12 @@
 
 ### Objective
 - Clone to the OG omega-triage-portal 
-- 
+- Learn new technologies
 
 ### Use Case
 1. View SARIF File, Online
 1. View SARIF File, Offline
-1. Triage 
+1. Triage Github Packages
 
 ### Requirements (TODOs)
 - [ ] Templates

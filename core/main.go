@@ -110,7 +110,7 @@ func wikiHandle(w http.ResponseWriter, r *http.Request) {
 }
 
 func graphqlHandle(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf("put graphql api here")
+	fmt.Fprintf(w, "put graphql api here")
 }
 
 func main() {
