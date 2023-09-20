@@ -124,7 +124,7 @@ func main() {
 	// route files in ./assets to /assets/ in the html
 	mux.Handle("/assets/",http.StripPrefix("/assets/",fs))
 
-	// URL Route 
+	// URL Routes
 	mux.HandleFunc("/",rootHandle)
 	mux.HandleFunc("/findings",findingsHandle)
 	mux.HandleFunc("/filters",filtersHandle)

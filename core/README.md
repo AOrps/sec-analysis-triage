@@ -1,13 +1,16 @@
 # Core
-- 
+
 
 ## Development (Core)
 
 ### Objective
-- Clone to the OG omega-triage-portal
+- Clone to the OG omega-triage-portal 
+- 
 
 ### Use Case
-
+1. View SARIF File, Online
+1. View SARIF File, Offline
+1. Triage 
 
 ### Requirements (TODOs)
 - [ ] Templates
@@ -18,11 +21,17 @@
 - [ ] Routing
 
 ### Security Requirements
-- Black-Hat GraphQL
+- Ensure no leakage of sensitive files
+- Pentest GraphQL Endpoint
+
+### Plus
+- [ ] Gitignore Emacs Backups on the `/assets` FileServer 
+
 
 ---
 
 ## Development (Infra)
+- This is a bonus, if it needs to go on a server
 
 ### Objective
 - To setup a kubernetes deployment that hosts the core and all it's external components for consumption
