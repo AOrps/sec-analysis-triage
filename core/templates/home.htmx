@@ -1,0 +1,22 @@
+{{block "root" .}}
+<div class="pure-u-5-5 page-content">
+  <h1 class="root-h1">SAT</h1>
+  <h2>Security Analysis Triage</h2>
+  <h3 class="root-h3">A Triage and Management Suite</h3>
+</div>
+
+<div class="pure-u-7-24">
+     <h4>latest findings</h4>
+</div>
+
+<div class="pure-u-7-24">
+     <p>test 1</p>
+</div>
+
+<div class="pure-u-7-24">
+     <p>test 1</p>
+</div>
+
+
+
+{{end}}

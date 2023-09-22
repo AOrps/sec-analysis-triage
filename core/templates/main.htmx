@@ -1,0 +1,20 @@
+{{block "main" .}}
+<!DOCTYPE html>
+<html lang="en">
+  {{template "header"}}
+<body>
+  <div class="pure-g">
+    {{template "nav" .Nav}}
+
+    {{if eq .TemplateSelect "root"}}
+         {{template "root"}}
+    {{else if eq .TemplateSelect "findings"}}
+         {{template "findings"}}
+    {{end}}
+
+    {{template "foot"}}
+
+</div>
+</body>
+</html>
+{{end}}
