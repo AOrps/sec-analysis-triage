@@ -16,6 +16,15 @@ h1, h2, h3 {
     margin-left: 10%;
 }
 
+.custom-card {
+    padding: 1rem 0 1rem 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+
+.custom-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 
 
 .root-h3 {

@@ -35,7 +35,7 @@ func Navbar() []NavLink {
 			Link: "/",
 		},
 		{
-			Name: "Finding",
+			Name: "Findings",
 			Link: "/findings",
 		},
 		{
@@ -53,6 +53,10 @@ func Navbar() []NavLink {
 		{
 			Name: "Wiki",
 			Link: "/wiki",
+		},
+		{
+			Name: "Metrics",
+			Link: "/metrics",
 		},
 		{
 			Name: "Settings",
@@ -124,6 +128,18 @@ func wikiHandle(w http.ResponseWriter, r *http.Request) {
 	tpl.ExecuteTemplate(w, "main", page)
 }
 
+func metricsHandle(w http.ResponseWriter, r *http.Request) {
+	tpl := template.Must(template.ParseGlob("templates/*.htmx"))
+
+	page := Page{
+		Nav:            Navbar(),
+		TemplateSelect: "metrics",
+	}
+	
+	tpl.ExecuteTemplate(w, "main", page)
+}
+
+
 func settingsHandle(w http.ResponseWriter, r *http.Request) {
 	tpl := template.Must(template.ParseGlob("templates/*.htmx"))
 
@@ -157,7 +173,8 @@ func main() {
 	mux.HandleFunc("/cases", casesHandle)
 	mux.HandleFunc("/tool-defects", toolDefectsHandle)
 	mux.HandleFunc("/wiki", wikiHandle)
-
+	mux.HandleFunc("/metrics", wikiHandle)
+	
 	mux.HandleFunc("/settings", settingsHandle)
 	mux.HandleFunc("/graphql", graphqlHandle)
 

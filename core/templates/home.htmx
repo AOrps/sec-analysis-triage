@@ -4,19 +4,24 @@
   <h2>Security Analysis Triage</h2>
   <h3 class="root-h3">A Triage and Management Suite</h3>
 </div>
+<div style="text-align: center;">
+  <div class="pure-u-7-24 custom-card">
+       <h4>latest findings</h4>
+       <p>Access the latest findings</p>
+       <a href="/findings"><button class="pure-button">Check Findings</button></a>
+  </div>
 
-<div class="pure-u-7-24">
-     <h4>latest findings</h4>
-</div>
+  <div class="pure-u-7-24 custom-card">
+       <h4>vuln search</h4>
+       <p>
+  </div>
 
-<div class="pure-u-7-24">
-     <p>vuln search</p>
-</div>
-
-<div class="pure-u-7-24">
-     <p>code search</p>
-</div>
-
+  <div class="pure-u-7-24 custom-card">
+       <h4>metrics</h4>
+       <p>Get telemetry information on scans</p>
+       <a href="/metrics"><button class="pure-button">Check Metrics</button></a>       
+  </div>
+<div>
 
 
 {{end}}
